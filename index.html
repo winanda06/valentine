@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine!</title>
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        body {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffe6ea;
+            padding: 50px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h1 {
+            color: #e6005c;
+            font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
+        }
+        #intro, #gallerySection, #valentine, #giftSection {
+            display: none;
+        }
+        .galleryContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .galleryItem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .galleryImage {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .caption {
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #333;
+        }
+        button {
+            background-color: #ff3366;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            animation: fadeIn 4s ease-in-out;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #cc0052;
+        }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <h1>Hallo Kekasih Tampankuu! ❤️</h1>
+        <img src="gallery/foto (16).jpg" class="galleryImage" alt="Foto Galeri">
+        <p>Klik button di bawah ya!</p>
+        <button onclick="showGallery()">Klik di sini</button>
+    </div>
+
+    <div id="gallerySection">
+        <h1>Gallery Kita Selama 4 Bulan 📸</h1>
+        <div class="galleryContainer">
+            <div class="galleryItem"><img src="gallery/foto (3).jpg" class="galleryImage" alt="Foto 1"><p class="caption">pertama kali kita ketemu dibkpk</p></div>
+            <div class="galleryItem"><img src="gallery/foto (21).jpg" class="galleryImage" alt="Foto 2"><p class="caption">pertama kali jalan berdua</p></div>
+            <div class="galleryItem"><img src="gallery/foto (25).jpg" class="galleryImage" alt="Foto 3"><p class="caption">pap pertama kamu ke aku</p></div>
+            <div class="galleryItem"><img src="gallery/foto (17).jpg" class="galleryImage" alt="Foto 4"><p class="caption">ngedate setelah resmi pacaran</p></div>
+            <div class="galleryItem"><img src="gallery/foto (19).jpg" class="galleryImage" alt="Foto 5"><p class="caption">photobooth pertama kita</p></div>
+            <div class="galleryItem"><img src="gallery/foto (20).jpg" class="galleryImage" alt="Foto 6"><p class="caption">foto kita kepuncak</p></div>
+            <div class="galleryItem"><img src="gallery/foto (15).jpg" class="galleryImage" alt="Foto 7"><p class="caption">first flower dari kamu</p></div>
+            <div class="galleryItem"><img src="gallery/foto (22).jpg" class="galleryImage" alt="Foto 8"><p class="caption">pertama kali kekamar kamu</p></div>
+            <div class="galleryItem"><img src="gallery/foto (9).jpg" class="galleryImage" alt="Foto 1"><p class="caption">kamu nemenin aku kondangan</p></div>
+            <div class="galleryItem"><img src="gallery/foto (5).jpg" class="galleryImage" alt="Foto 2"><p class="caption">kita ke blokm</p></div>
+            <div class="galleryItem"><img src="gallery/foto (6).jpg" class="galleryImage" alt="Foto 3"><p class="caption">kita ngedate ke bxsea</p></div>
+            <div class="galleryItem"><img src="gallery/foto (2).jpg" class="galleryImage" alt="Foto 4"><p class="caption">tahun baruan sama kamu bela belain nyamperin aku pdhl baru pulang kerja</p></div>
+            <div class="galleryItem"><img src="gallery/foto (1).jpg" class="galleryImage" alt="Foto 5"><p class="caption">photobooth kedua kita kamu make baju dari aku</p></div>
+           
+        </div>
+    
+        <button onclick="showValentine()">Lanjut</button>
+    </div>
+    
+    <div id="valentine">
+        <h1>Happy Valentine Kekasih Tampankuu! ❤️</h1>
+        <p>Semoga sayang aku selalu! 💖</p>
+        <button onclick="showGiftPrompt()">Gift 🎁</button>
+    </div>
+    
+    <div id="giftSection">
+        <p>Ini untukmu! 💝</p>
+        <img src="gallery/foto.jpg" class="galleryImage" alt="Hadiah Valentine">
+        <p>Muachh! 😘</p>
+    </div>
+
+    <script>
+        document.getElementById('intro').style.display = 'block';
+
+        function showGallery() {
+            document.getElementById('intro').style.display = 'none';
+            document.getElementById('gallerySection').style.display = 'block';
+        }
+
+        function showValentine() {
+            document.getElementById('gallerySection').style.display = 'none';
+            document.getElementById('valentine').style.display = 'block';
+        }
+
+        function showGiftPrompt() {
+            let modal = document.createElement("div");
+            modal.style.position = "fixed";
+            modal.style.top = "50%";
+            modal.style.left = "50%";
+            modal.style.transform = "translate(-50%, -50%)";
+            modal.style.background = "white";
+            modal.style.padding = "20px";
+            modal.style.borderRadius = "10px";
+            modal.style.boxShadow = "0px 0px 10px rgba(0,0,0,0.2)";
+            modal.innerHTML = `<p>Aku punya hadiah buat kamu, mau lihat?</p>
+                <button id='yesButton'>Yes</button>
+                <button id='noButton'>No</button>`;
+            document.body.appendChild(modal);
+
+            document.getElementById('yesButton').onclick = function() {
+                document.body.removeChild(modal);
+                document.getElementById('valentine').style.display = 'none';
+                document.getElementById('giftSection').style.display = 'block';
+            };
+
+            document.getElementById('noButton').onclick = function() {
+                document.body.removeChild(modal);
+                showGiftPrompt();
+            };
+        }
+    </script>
+</body>
+</html>
